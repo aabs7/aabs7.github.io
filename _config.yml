@@ -7,9 +7,9 @@
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # --------------------------
-title: Chirpy                          # the main title
+title: Abhish Khanal                            # the main title
 
-tagline: A text-focused Jekyll theme.  # it will display as the sub-title
+tagline: I am a robotics engineer working in the field of control, estimation, navigation of aerial and ground robots. I love RL.  # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   A minimal, portfolio, sidebar,
@@ -31,7 +31,7 @@ twitter:
 
 social:
   name: Abhish Khanal                  # it will shows as the copyright owner in Footer
-  email: example@doamin.com             # change to your email address
+  email: abheeshkhanal@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
     - https://twitter.com/abheeshkhanal      # change to your twitter homepage
