@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<link href="{{ site.baseurl }}/assets/lightbox/css/lightbox.css" rel="stylesheet">
+<link href="{{ site.baseurl }}/assets/css/gallery.css" rel="stylesheet">
+<script src="{{ site.baseurl }}/assets/lightbox/js/lightbox-plus-jquery.js"></script>
+
+<script>
+  // Wait for Lightbox2 to be fully initialized
+  lightbox.option({
+    'showImageNumberLabel': false, // Hide "Image x of y" label
+    'wrapAround': true, // Enable looping through images
+  });
+</script>
+
+{{ content }}
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
