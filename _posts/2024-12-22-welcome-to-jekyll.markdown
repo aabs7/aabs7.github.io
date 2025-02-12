@@ -4,6 +4,8 @@ title:  "Welcome to Jekyll!"
 date:   2024-12-22 11:33:31 -0500
 categories: jekyll update
 permalink: /welcome-to-jekyll/
+image: "/assets/images/image1.jpg"
+summary: "This is a brief summary of the blog post that gives readers an idea of the content."
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
