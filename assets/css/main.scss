@@ -1,0 +1,133 @@
+---
+# This front matter is required for Jekyll to process the file
+---
+
+// Step 1: Import the Google Font (must be at the top)
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400&display=swap');
+
+// Step 2: Define your theme variable overrides
+$base-font-family: 'Dosis', sans-serif;
+$base-font-size:   1.3rem; //
+
+// 2. Import the default theme styles
+@import "minima";
+
+.site-header {
+  border-top: none;
+}
+
+
+///////////////////////////////////////////////////////////////////////////
+/// Page Header : Name and title styling
+/// //////////////////////////////////////////////////////////////////////
+.page-header {
+  margin-bottom: 20px;  // Add space below the header, before the content
+}
+
+.page-header h1 {
+  font-size: 3.5rem;    // Make your name nice and big
+  margin-bottom: 0;     // Remove default space to pull the subtitle closer
+}
+
+.page-header .subtitle {
+  font-size: 1.25rem;    // A good, readable size for your title
+  color: #666;         // A slightly lighter color than pure black
+  margin-top: 0px;      // A little space between your name and title
+}
+
+//////////////////////////////////////////////////////////////////////////
+/// Introduction and profile picture
+/// //////////////////////////////////////////////////////////////////////
+.home-intro-container {
+  display: flex; /* This is the magic! It enables the flexbox layout. */
+  align-items: center; /* This vertically aligns the text and image. */
+  gap: 1rem; /* This adds some space between the text and the image. */
+}
+
+.home-intro-text {
+  flex: 2; /* Makes the text column take up twice as much space as the image column. */
+}
+
+.home-intro-image {
+  flex: 1; /* The image column takes up 1 part of the available space. */
+  text-align: center; /* Centers the image within its column. */
+}
+
+.home-intro-image img {
+  max-width: 250px; /* Adjust the size of your image as you like. */
+  width: 100%;
+  height: auto; /* Keeps the image's aspect ratio. */
+  border-radius: 5px; /* Makes the image circular. Use 15px for rounded corners. */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds a subtle shadow for depth. */
+}
+
+// Social media icons
+.social-links {
+  margin-top: 8px; // Adjusts the space between the picture and the icons
+}
+
+.social-links a {
+  font-size: 1.8rem;        // Slightly smaller icons might look better here
+  color: #000000;
+  margin: 0 6px;            // Adjust space between icons
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #0077b5;
+}
+
+// Styling for the download resume button
+.resume-container {
+  margin-top: 0px;     // Adds space above the link
+  text-align: center;   // Centers the link
+}
+// .resume-container {
+//   margin-top: 20px; // Adds space between the social links and the button
+// }
+
+// .resume-button {
+//   display: inline-block;
+//   padding: 12px 24px;
+//   background-color: #424242; // A dark grey, matches your theme
+//   color: #ffffff;           // White text
+//   border-radius: 5px;        // Soft rounded corners
+//   text-decoration: none;     // Removes the default link underline
+//   font-weight: bold;
+//   transition: background-color 0.3s ease;
+// }
+
+// // Style for the icon inside the button
+// .resume-button .fas {
+//   margin-right: 8px;
+// }
+
+// // Hover effect
+// .resume-button:hover {
+//   background-color: #0077b5; // Changes color on hover
+// }
+
+
+
+////////////////////////////////////////////////////////////////////////////////////
+/// Recent blog section styling in home
+/// ////////////////////////////////////////////////////////////////////////////////
+
+
+/* Home recent blogs CSS */
+.home-recent-blogs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3rem;
+    margin-bottom: 2px;
+}
+
+.home-recent-blogs-more{
+    font-size: 1.3rem;
+    color: gray;
+    text-decoration: none;
+}
+.home-recent-blogs-more:hover {
+text-decoration: underline;
+}

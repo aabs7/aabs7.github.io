@@ -4,23 +4,15 @@ title: Blogs
 permalink: /blogs/
 ---
 
-<link href="{{ site.baseurl }}/assets/css/blog.css" rel="stylesheet">
+# A Collection of my Notes
 
-# Blogs
 
-<div class="post-list">
-    {%- for post in site.posts -%}
-    <div class="post-card">
-        <div class="post-image">
-            <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
-        </div>
-        <div class="post-content">
-            <h6 class="post-title">
-                <p class="post-date">{{ post.date | date: "%b %d, %Y" }}</p>
-                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-            </h6>
-            <p class="post-summary">{{ post.summary }}</p>
-        </div>
-    </div>
-    {%- endfor -%}
-</div>
+## Robotics
+I like to learn a lot of things ...
+1. [Starting to Write]({{ site.baseurl }}{% post_url 2025-2-11-starting-to-write %})
+2. [This is different blog]({{ site.baseurl }}{% post_url 2025-2-11-starting-to-write %})
+
+## Others
+I like to do other things too ...
+1. [Starting to Write]({{ site.baseurl }}{% post_url 2025-2-11-starting-to-write %})
+2. [This is different blog]({{ site.baseurl }}{% post_url 2025-2-11-starting-to-write %})

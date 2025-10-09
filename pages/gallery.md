@@ -4,6 +4,7 @@ title: Gallery
 permalink: photo-gallery
 ---
 
+# Gallery
 I like to travel ✈️, try new foods 🍜, meet different people 🤝🏼, and try new things.
 I do these things when I'm not working or taking a break.
 The more you experience, the more you know, and you have many stories to tell.
