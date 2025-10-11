@@ -1,11 +1,8 @@
 ---
-layout: default
+layout: page
 title: Blogs
 permalink: /blogs/
 ---
-
-# A Collection of my Notes
-
 
 ## Robotics
 I like to learn a lot of things ...
