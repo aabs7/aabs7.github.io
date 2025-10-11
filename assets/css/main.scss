@@ -44,6 +44,18 @@ $base-font-size:   1.3rem; //
   gap: 1rem; /* This adds some space between the text and the image. */
 }
 
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+  .home-intro-container {
+    /* * Changes the layout from a horizontal row to a vertical column.
+     * 'column-reverse' is used because your image div comes after your text div
+     * in the HTML, and this puts the second item (image) on top.
+    */
+    flex-direction: column-reverse;
+  }
+}
+
+
 .home-intro-text {
   flex: 2; /* Makes the text column take up twice as much space as the image column. */
 }
@@ -82,30 +94,7 @@ $base-font-size:   1.3rem; //
   margin-top: 0px;     // Adds space above the link
   text-align: center;   // Centers the link
 }
-// .resume-container {
-//   margin-top: 20px; // Adds space between the social links and the button
-// }
 
-// .resume-button {
-//   display: inline-block;
-//   padding: 12px 24px;
-//   background-color: #424242; // A dark grey, matches your theme
-//   color: #ffffff;           // White text
-//   border-radius: 5px;        // Soft rounded corners
-//   text-decoration: none;     // Removes the default link underline
-//   font-weight: bold;
-//   transition: background-color 0.3s ease;
-// }
-
-// // Style for the icon inside the button
-// .resume-button .fas {
-//   margin-right: 8px;
-// }
-
-// // Hover effect
-// .resume-button:hover {
-//   background-color: #0077b5; // Changes color on hover
-// }
 
 
 
