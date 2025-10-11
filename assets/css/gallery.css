@@ -31,4 +31,6 @@ margin: 5px 0 0;
     width: auto !important; /* Ensure caption width adjusts */
     white-space: normal;
     word-wrap: break-word;
+    line-height: 1.4; /* optional for better readability */
+    font-size: 20px; /* adjust as needed */
   }

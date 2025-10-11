@@ -19,8 +19,8 @@ So, here are the collections of my memories.
 <div class="gallery">
   {% for image in site.data.gallery %}
     <div class="gallery-item">
-      <a href="{{ site.baseurl}}/assets/images/{{ image.name }}" data-lightbox="gallery" data-title="{{ image.caption }}">
-        <img src="{{ site.baseurl}}/assets/images/thumbnails/{{ image.name }}" alt="{{ image.caption }}">
+      <a href="{{ site.baseurl}}/assets/images/gallery/{{ image.name }}" data-lightbox="gallery" data-title="{{ image.caption }}">
+        <img src="{{ site.baseurl}}/assets/images/gallery/{{ image.name }}" alt="{{ image.caption }}">
       </a>
     </div>
   {% endfor %}
