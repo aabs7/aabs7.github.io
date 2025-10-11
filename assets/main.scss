@@ -16,6 +16,10 @@ $base-font-size:   1.3rem; //
   border-top: none;
 }
 
+.wrapper {
+  max-width: 850px; // The default is 800px
+}
+
 
 ///////////////////////////////////////////////////////////////////////////
 /// Page Header : Name and title styling
@@ -119,4 +123,17 @@ $base-font-size:   1.3rem; //
 }
 .home-recent-blogs-more:hover {
 text-decoration: underline;
+}
+
+// to center blog images
+.blog-figure {
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.blog-figure p {
+  font-size: 0.9rem;
+  color: gray;
+  margin-top: 4px;
 }
