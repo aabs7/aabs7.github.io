@@ -28,7 +28,7 @@ layout: page
 
     <h3> Recent Posts <a href="{{ '/blogs/' | relative_url }}" class="home-recent-blogs-more">...</a> </h3>
     {%- if site.posts.size > 0 -%}
-        {%- for post in site.posts limit:5-%}
+        {%- for post in site.posts limit:6-%}
             <h6 class="home-recent-blogs">
                 <a href="{{post.url | relative_url}}">
                     {{post.title | escape}}

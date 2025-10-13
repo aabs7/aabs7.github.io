@@ -1,5 +1,7 @@
 ---
-layout: default
+layout: post
+title:  "Transforms (tf2) in ROS"
+date:  2025-10-03
 ---
 
 # Transforms (tf2) in ROS
@@ -28,7 +30,7 @@ This command will run continuously, *broadcasting* this transform to the rest of
 
 You can verify if this transform is broadcasted by using `tf2_echo` node in `tf2_ros` package:
 
-```markdown
+```
 ros2 run tf2_ros tf2_echo world arm_base
 ```
 
@@ -85,7 +87,7 @@ You’ll see something like this:
 
 ## 3. Automatically Computing Transformation Matrix using TF2
 
-We defined `gripper` frame relative to the `a[1.354, 0.353, 0.200]rm_base`, and never relative to the `world`. We can hand compute the relative transformation from `gripper` to `world` knowing that they are connected. But the whole point was this will become tedious when we have a robot with a lot of joints.
+We defined `gripper` frame relative to the `arm_base [1.354, 0.353, 0.200]`, and never relative to the `world`. We can hand compute the relative transformation from `gripper` to `world` knowing that they are connected. But the whole point was this will become tedious when we have a robot with a lot of joints.
 
 We have `tf2` to compute the transformation for us. Because `tf2` knows the whole chain, it can calculate it for us.
 

@@ -1,5 +1,7 @@
 ---
-layout: default
+layout: post
+title: "URDF, Robot Description, and Robot State Publisher"
+date: 2025-10-04
 ---
 
 # URDF, Robot Description, and Robot State Publisher

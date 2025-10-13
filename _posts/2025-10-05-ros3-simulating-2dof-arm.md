@@ -1,5 +1,7 @@
 ---
-layout: default
+layout: post
+title: "Simulating a Simple 2DoF Planar Arm"
+date: 2025-10-05
 ---
 
 # Simulating a Simple 2DoF Planar Arm
