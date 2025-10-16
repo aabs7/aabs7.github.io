@@ -1,0 +1,5 @@
+_site/
+.git/
+*.swp
+*.log
+node_modules/
