@@ -8,8 +8,7 @@ summary: ""
 ---
 
 # A new website, and starting to write
-I made this webiste with a clear objective. I wanted to start writing and documenting things that I did. I have worked on many projects till now, which if documented would help others too. Right now, I don't have that. And this website is a way to get around that.
-There are thoughts, ideas and views that I have which are undocumented too. Other than that, I want this website to be a sort of collection of my life-event, memories, lessons, teachings.
-This website is also a way of taking me out of the social-media hole where I've been in and out for couple of times now.
+I made this website because I wanted to start writing and documenting things that I did. I usually work on different projects, and I used to leave it undocumented. Documenting what you've learned and writing it down makes your understanding deeper by clearing your head and organizing your thoughts. This website is a way for me to getting started with writing.
+I want this website to be a part of me, my thoughts, my memories, a collection of my life-events, lessons, and teachings.
 
-I want to stress that any view that you find here might be subject to change, and reflects my view at that point in time. My view point might change after some time.
+Additionally, I've tried to get myself out of social media for quite a while now, but one way or another I keep going back to it---just for the sake of "connecting with friends & families who are far from me". I think social media that we subscribed to is a thing of the past. Now, it's just a platform where we doomscroll strangers' posts and videos when we're bored and we justify not removing it because it lets us "connect with friends & families". Moving further from that, this website is an effort to create an archive of my thoughts, work, and memories in a personally owned space.
