@@ -10,31 +10,23 @@ layout: page
         <div class="home-intro-text">
             {{ content }}
         </div>
+        <!-- Profile Picture -->
         <div class="home-intro-image">
             <img src="{{ '/assets/images/Abhish_Khanal_profile_pic.jpg' | relative_url }}" alt="A photo of me">
+
+            <!-- Social Links below picture -->
             <div class="social-links">
-                <a href="https://github.com/aabs7" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="mailto:abheeshkhanal@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-                <a href="https://scholar.google.com/citations?user=dLdbu8YAAAAJ" target="_blank" title="Google Scholar"><i class="fab fa-google-scholar"></i></a>
-                <a href="https://linkedin.com/in/aabs7" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://youtube.com/@abhishkhanal" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            {%- for link in site.social_links -%}
+                <a href="{{ link.url }}" target="_blank" title="{{ link.name }}"><i class="{{ link.icon }}"></i></a>
+            {%- endfor -%}
             </div>
             <div class="resume-container">
                 <a href="{{'/assets/files/Abhish_resume.pdf' | relative_url }}" download>Download Resume</a>
             </div>
-    </div>
+        </div>
     </div>
 
 
-    <h3> Recent Posts <a href="{{ '/blogs/' | relative_url }}" class="home-recent-blogs-more">...</a> </h3>
-    {%- if site.posts.size > 0 -%}
-        {%- for post in site.posts limit:6-%}
-            <h6 class="home-recent-blogs">
-                <a href="{{post.url | relative_url}}">
-                    {{post.title | escape}}
-                </a>
-                <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
-            </h6>
-        {%- endfor -%}
-    {%- endif -%}
+    {% include recent_posts.html %}
+
 </div>

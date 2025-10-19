@@ -1,0 +1,14 @@
+<div class="recent-posts">
+    <h3> Recent Posts <a href="{{ '/blog/' | relative_url }}" class="home-recent-blogs-more">...</a> </h3>
+    {%- if site.topics.size > 0 -%}
+        {% assign blogs = site.topics | where_exp:"item", "item.subchapter" | sort: 'date' | reverse %}
+        {%- for blog in blogs limit:6-%}
+            <h6 class="home-recent-blogs">
+                <a href="{{blog.url | relative_url}}">
+                    {{blog.title | escape}}
+                </a>
+                <span class="post-date">{{ blog.date | date: "%b %d, %Y" }}</span>
+            </h6>
+        {%- endfor -%}
+    {%- endif -%}
+</div>

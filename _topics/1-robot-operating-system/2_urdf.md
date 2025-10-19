@@ -1,6 +1,5 @@
 ---
 layout: post
-chapter: 1
 subchapter: 2
 title: "URDF, Robot Description, and Robot State Publisher"
 date:  2025-10-03

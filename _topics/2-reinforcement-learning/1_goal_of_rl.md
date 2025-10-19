@@ -2,7 +2,6 @@
 layout: post
 title:  "The goal of Reinforcement Learning"
 date:   2025-10-11
-chapter: 2
 subchapter: 1
 ---
 # The goal of Reinforcement Learning

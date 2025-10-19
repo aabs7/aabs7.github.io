@@ -7,17 +7,32 @@ url: "https://abkhanal.com" # the base hostname & protocol for your site, e.g. h
 twitter_username: ""
 github_username:  ""
 
-# permalink for blog
-# permalink: /blog/:title/
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+
+social_links:
+  - name: GitHub
+    url: "https://github.com/aabs7"
+    icon: "fab fa-github"
+  - name: Email
+    url: "mailto:abheeshkhanal@gmail.com"
+    icon: "fas fa-envelope"
+  - name: Google Scholar
+    url: "https://scholar.google.com/citations?user=dLdbu8YAAAAJ"
+    icon: "fab fa-google-scholar"
+  - name: LinkedIn
+    url: "https://linkedin.com/in/aabs7"
+    icon: "fab fa-linkedin"
+  - name: YouTube
+    url: "https://youtube.com/@abhishkhanal"
+    icon: "fab fa-youtube"
+
 
 collections:
   moments:
     output: true
   topics:
     output: true
-    permalink: new_blog/topics/:path/
-
-# Build settings
-theme: minima
-plugins:
-  - jekyll-feed
+    permalink: blog/topics/:path/

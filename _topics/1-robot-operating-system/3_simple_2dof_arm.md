@@ -1,6 +1,5 @@
 ---
 layout: post
-chapter: 1
 subchapter: 3
 title: "Simulating a Simple 2DoF Planar Arm"
 date: 2025-10-05
