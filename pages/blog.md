@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Blogs
-permalink: /blogs/
+title: Blog
+permalink: /blog/
 ---
 
 I like to build robots and write codes to make that robot do things that I find boring to do in my everyday life. Doing robotics is fun because you get to learn about different fields (e.g., computer science, engineering, mathematics, and others), get to implement those ideas, and see it working in real life.

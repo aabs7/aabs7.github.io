@@ -3,7 +3,6 @@ layout: post
 title:  "A new website, and starting to write"
 date:   2025-2-11
 categories: Personal Blog
-permalink: /a-new-website/
 summary: ""
 ---
 

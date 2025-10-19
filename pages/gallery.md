@@ -1,7 +1,7 @@
 ---
 layout: gallery
 title: Gallery
-permalink: photo-gallery
+permalink: gallery
 ---
 
 I like to travel ✈️, try new foods 🍜, meet different people 🤝🏼, and try new things.
@@ -11,17 +11,17 @@ The stories and memories from the past are the sources of happiness, humility, i
 So, here are the collections of my memories.
 
 
-<div style="margin-bottom: 20px;"></div>
-<hr class="straight-line">
-<!-- Spacing below -->
-<div style="margin-bottom: 20px;"></div>
+<div style="margin-bottom: 40px;"></div>
 
-<div class="gallery">
-  {% for image in site.data.gallery %}
-    <div class="gallery-item">
-      <a href="{{ site.baseurl}}/assets/images/gallery/{{ image.name }}" data-lightbox="gallery" data-title="{{ image.caption }}">
-        <img src="{{ site.baseurl}}/assets/images/gallery/{{ image.name }}" alt="{{ image.caption }}">
-      </a>
-    </div>
+
+<div id="lightgallery">
+  {% assign sorted_moments = site.moments | sort: 'date' | reverse %}
+  {% for moment in sorted_moments %}
+    <a class="gallery-item"
+      data-lg-size="{{ moment.width }}-{{ moment.height }}"
+      data-src="{{ moment.image }}"
+      data-sub-html="{{ moment.caption }}">
+      <img class="img-responsive" src="{{ moment.thumbnail }}" alt="{{ moment.caption }}"/>
+    </a>
   {% endfor %}
 </div>
