@@ -1,0 +1,13 @@
+<ol>
+  {% assign filtered_posts = site.posts | where: "categories", include.category %}
+  {% if filtered_posts.size > 0 %}
+    {% for post in filtered_posts %}
+      <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <span class="post-date" style="float: right;">{{ post.date | date: "%B %d, %Y" }}</span>
+      </li>
+    {% endfor %}
+  {% else %}
+    <li>Coming soon...</li>
+  {% endif %}
+</ol>

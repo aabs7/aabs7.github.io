@@ -1,8 +1,9 @@
 ---
 layout: post
-subchapter: 1
 title:  Transforms (tf2) in ROS
 date:  2025-10-03
+categories: robot-operating-system
+slug: "transforms-tf2-in-ros"
 ---
 
 # Transforms (tf2) in ROS

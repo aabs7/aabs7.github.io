@@ -1,8 +1,9 @@
 ---
 layout: post
-subchapter: 3
 title: "Simulating a Simple 2DoF Planar Arm"
 date: 2025-10-05
+categories: robot-operating-system
+slug: "simulating-a-simple-2dof-planar-arm"
 ---
 
 # Simulating a Simple 2DoF Planar Arm

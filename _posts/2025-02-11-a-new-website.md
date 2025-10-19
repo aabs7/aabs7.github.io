@@ -1,8 +1,9 @@
 ---
 layout: post
 title:  "A new website, and starting to write"
-date:   2025-2-11
-subchapter: 1
+date:   2025-02-11
+categories: miscellaneous
+slug: "a-new-website-and-starting-to-write"
 ---
 
 # A new website, and starting to write

@@ -6,7 +6,7 @@ blogimageurl: "/my_new_website/assets/images/blogs/"
 url: "https://abkhanal.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ""
 github_username:  ""
-
+permalink: /blog/:categories/:slug/
 # Build settings
 theme: minima
 plugins:
@@ -33,6 +33,6 @@ social_links:
 collections:
   moments:
     output: true
-  topics:
+  categories:
     output: true
-    permalink: blog/topics/:path/
+    permalink: /blog/:name/
