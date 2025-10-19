@@ -2,7 +2,7 @@
 title: Abhish Khanal with mom dad
 image: /gallery/img/Abhish_Khanal_with_mom_dad.jpg
 thumbnail: /gallery/img/thumbnails/Abhish_Khanal_with_mom_dad_400w.jpg
-caption:
+caption: "Also in Dakshinkali, with my mom and dad."
 date: 2025-10-17 15:24:21
 tags: [Abhish, Khanal, with, mom, dad]
 height: 2667
