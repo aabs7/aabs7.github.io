@@ -2,16 +2,20 @@ title: Abhish Khanal
 email: abheeshkhanal@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "/my_new_website" # the subpath of your site, e.g. /blog
+blogimageurl: "/my_new_website/assets/images/blogs/"
 url: "https://abkhanal.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ""
 github_username:  ""
 
 # permalink for blog
-permalink: /blog/:title/
+# permalink: /blog/:title/
 
 collections:
   moments:
     output: true
+  topics:
+    output: true
+    permalink: new_blog/topics/:path/
 
 # Build settings
 theme: minima
