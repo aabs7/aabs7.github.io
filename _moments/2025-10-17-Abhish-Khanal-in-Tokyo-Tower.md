@@ -1,7 +1,7 @@
 ---
 title: Abhish Khanal in Tokyo Tower
-image: http://localhost:4001/gallery/img/Abhish_Khanal_in_Tokyo_Tower.jpg
-thumbnail: http://localhost:4001/gallery/img/thumbnails/Abhish_Khanal_in_Tokyo_Tower_400w.jpg
+image: /gallery/img/Abhish_Khanal_in_Tokyo_Tower.jpg
+thumbnail: /gallery/img/thumbnails/Abhish_Khanal_in_Tokyo_Tower_400w.jpg
 caption:
 date: 2025-10-17 15:24:19
 tags: [Abhish, Khanal, in, Tokyo, Tower]
