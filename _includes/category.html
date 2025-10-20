@@ -1,7 +1,9 @@
 <ol>
+  <!-- reverse sort by post.date -->
   {% assign filtered_posts = site.posts | where: "categories", include.category %}
   {% if filtered_posts.size > 0 %}
-    {% for post in filtered_posts %}
+    {% assign chronological_posts = filtered_posts | reverse %}
+    {% for post in chronological_posts %}
       <li>
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
         <span class="post-date" style="float: right;">{{ post.date | date: "%B %d, %Y" }}</span>
