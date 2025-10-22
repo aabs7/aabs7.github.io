@@ -7,4 +7,5 @@ date: 2025-10-17 15:24:21
 tags: [Abhish, Khanal, when, toddler]
 height: 1280
 width: 960
+album: solo
 ---

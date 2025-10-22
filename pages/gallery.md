@@ -13,15 +13,32 @@ So, here are the collections of my memories.
 
 <div style="margin-bottom: 40px;"></div>
 
-
 <div id="lightgallery">
   {% assign sorted_moments = site.moments | sort: 'date' | reverse %}
-  {% for moment in sorted_moments %}
+  {% assign albums = sorted_moments | group_by: 'album' %}
+
+  {% for album in albums %}
+    {% assign cover = album.items | sort: 'date' | first %}
+
+    <!-- Album cover -->
     <a class="gallery-item"
-      data-lg-size="{{ moment.width }}-{{ moment.height }}"
-      data-src="{{ moment.image }}"
-      data-sub-html="{{ moment.caption }}">
-      <img class="img-responsive" src="{{ moment.thumbnail }}" alt="{{ moment.caption }}"/>
+       data-album="{{ album.name | slugify }}"
+       data-src="http://localhost:4001{{ cover.image }}"
+       data-sub-html="<h4>{{ album.name }}</h4><p>{{ cover.caption }}</p>">
+      <img class="img-responsive"
+           src="http://localhost:4001{{ cover.thumbnail }}"
+           alt="{{ album.name }}"/>
     </a>
+
+    <!-- Hidden images in the same album -->
+    <div class="album-group" id="album-{{ album.name | slugify }}" style="display:none;">
+      {% for moment in album.items %}
+        {% if moment != cover %}
+          <a data-src="http://localhost:4001{{ moment.image }}"
+             data-thumb="http://localhost:4001{{ moment.thumbnail }}"
+             data-sub-html="<h4>{{ album.name }}</h4><p>{{ moment.caption }}</p>"></a>
+        {% endif %}
+      {% endfor %}
+    </div>
   {% endfor %}
 </div>

@@ -7,4 +7,5 @@ date: 2025-10-17 15:24:21
 tags: [Abhish, Khanal, with, mom, dad]
 height: 2667
 width: 2000
+album: childhood
 ---

@@ -7,4 +7,5 @@ date: 2025-10-17 15:24:19
 tags: [Abhish, Khanal, as, Krishna]
 height: 1280
 width: 960
+album: solo
 ---

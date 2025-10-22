@@ -11,10 +11,34 @@ layout: page
 <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.8.3/plugins/thumbnail/lg-thumbnail.min.js"></script>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const galleryElem = document.getElementById('lightgallery');
-    if (galleryElem) {
-      lightGallery(galleryElem, {
+document.addEventListener("DOMContentLoaded", function() {
+  const coverLinks = document.querySelectorAll(".gallery-item");
+
+  coverLinks.forEach(link => {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+
+      const albumName = this.dataset.album;
+      const albumGroup = document.querySelector(`#album-${albumName}`);
+      if (!albumGroup) return;
+
+      // Include the cover image + hidden album images
+      const dynamicElements = [
+        {
+          src: this.getAttribute("data-src"),
+          thumb: this.querySelector("img").getAttribute("src"),
+          subHtml: this.getAttribute("data-sub-html")
+        },
+        ...Array.from(albumGroup.querySelectorAll("a")).map(a => ({
+          src: a.getAttribute("data-src"),
+          thumb: a.getAttribute("data-thumb") || a.getAttribute("data-src"), // fallback
+          subHtml: a.getAttribute("data-sub-html")
+        }))
+      ];
+
+      const dynamicGallery = lightGallery(this, {
+        dynamic: true,
+        dynamicEl: dynamicElements,
         plugins: [lgZoom, lgThumbnail],
         speed: 500,
         thumbnail: true,
@@ -23,8 +47,12 @@ layout: page
         counter: false,
         loop: true
       });
-    }
+
+      dynamicGallery.openGallery();
+    });
   });
+});
 </script>
+
 
 {{ content }}

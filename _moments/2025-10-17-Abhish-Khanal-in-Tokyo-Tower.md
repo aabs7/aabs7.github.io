@@ -7,4 +7,5 @@ date: 2025-10-17 15:24:19
 tags: [Abhish, Khanal, in, Tokyo, Tower]
 height: 1440
 width: 1920
+album: foreign-trips
 ---

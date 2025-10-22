@@ -7,4 +7,5 @@ date: 2018-08-28 10:37:47
 tags: [Abhish, Khanal, in, vietnam]
 height: 1500
 width: 2000
+album: foreign-trips
 ---

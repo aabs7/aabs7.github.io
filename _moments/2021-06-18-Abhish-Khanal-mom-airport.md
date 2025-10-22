@@ -7,4 +7,5 @@ date: 2021-06-18 17:18:56
 tags: [Abhish, Khanal, mom, airport]
 height: 1500
 width: 2000
+album: childhood
 ---

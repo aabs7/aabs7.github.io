@@ -7,4 +7,5 @@ date: 2025-10-17 15:24:19
 tags: [Abhish, Khanal, in, Japan]
 height: 1536
 width: 1536
+album: foreign-trips
 ---

@@ -7,4 +7,5 @@ date: 2021-06-18 17:02:06
 tags: [Abhish, Khanal, with, his, grandpa]
 height: 1500
 width: 2000
+album: childhood
 ---
