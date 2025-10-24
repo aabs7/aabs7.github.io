@@ -22,10 +22,10 @@ So, here are the collections of my memories.
     <!-- Album cover -->
     <a class="gallery-item"
        data-album="{{ album.name | slugify }}"
-       data-src="http://localhost:4001{{ cover.image }}"
+       data-src="{{ cover.image }}"
        data-sub-html="<h4>{{ album.name }}</h4><p>{{ cover.caption }}</p>">
       <img class="img-responsive"
-           src="http://localhost:4001{{ cover.thumbnail }}"
+           src="{{ cover.thumbnail }}"
            alt="{{ album.name }}"/>
       <div class="gallery-item-title">{{ album.name | escape }}</div>
     </a>
@@ -34,8 +34,8 @@ So, here are the collections of my memories.
     <div class="album-group" id="album-{{ album.name | slugify }}" style="display:none;">
       {% for moment in album.items %}
         {% if moment != cover %}
-          <a data-src="http://localhost:4001{{ moment.image }}"
-             data-thumb="http://localhost:4001{{ moment.thumbnail }}"
+          <a data-src="{{ moment.image }}"
+             data-thumb="{{ moment.thumbnail }}"
              data-sub-html="<h4>{{ album.name }}</h4><p>{{ moment.caption }}</p>"></a>
         {% endif %}
       {% endfor %}
