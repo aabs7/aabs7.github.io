@@ -14,6 +14,7 @@ So, here are the collections of my memories.
 <div style="margin-bottom: 40px;"></div>
 
 <div id="lightgallery">
+  {% assign sorted_moments = site.moments | sort: 'date' | reverse  %}
   {% assign albums = sorted_moments | group_by: 'album'  %}
 
   {% for album in albums %}
