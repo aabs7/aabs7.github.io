@@ -28,6 +28,7 @@ So, here are the collections of my memories.
       <img class="img-responsive"
            src="http://localhost:4001{{ cover.thumbnail }}"
            alt="{{ album.name }}"/>
+      <div class="gallery-item-title">{{ album.name | escape }}</div>
     </a>
 
     <!-- Hidden images in the same album -->
