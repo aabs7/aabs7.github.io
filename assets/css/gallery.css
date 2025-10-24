@@ -42,3 +42,10 @@
 .gallery-item:hover img {
     transform: scale(1.02);
 }
+
+/* Style for non-active album thumbnails in lightgallery */
+.lg-thumb-item.grayscale-thumb img {
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
