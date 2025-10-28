@@ -1,19 +1,15 @@
 ---
 layout: page
 permalink: /publications/
+title: Publications
+description: selected publications in reversed chronological order
+years: [2025, 2024, 2023, 2022, 2021, 2020]
 ---
 
-{%- assign scholar_link = site.social_links | where: "name", "Google Scholar" | first -%}
+<div class="publications">
 
-{%- if scholar_link -%}
-  <meta http-equiv="refresh" content="0; url={{ scholar_link.url | escape }}" />
+{% for y in page.years %}
+  {% bibliography -f papers -q @*[year={{y}}]* %}
+{% endfor %}
 
-  <p>Redirecting to my <a href="{{ scholar_link.url | escape }}">google scholar profile</a>...</p>
-
-  <p>
-    If you are not redirected,
-    <a href="{{ scholar_link.url | escape }}">please click here</a>.
-  </p>
-{%- else -%}
-  <p>Error: Google Scholar URL not found in _config.yml.</p>
-{%- endif -%}
+</div>

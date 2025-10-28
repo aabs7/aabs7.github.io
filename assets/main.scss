@@ -2,6 +2,7 @@
 # This front matter is required for Jekyll to process the file
 ---
 
+
 // Step 1: Import the Google Font (must be at the top)
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400&display=swap');
 
@@ -11,6 +12,8 @@ $base-font-size:   1.3rem; //
 
 // 2. Import the default theme styles
 @import "minima";
+@import "variables";
+@import "themes";
 
 .site-header {
   border-top: none;
@@ -35,7 +38,8 @@ $base-font-size:   1.3rem; //
 
 .page-header .subtitle {
   font-size: 1.25rem;    // A good, readable size for your title
-  color: #666;         // A slightly lighter color than pure black
+  // color: #666;         // A slightly lighter color than pure black
+  color: $red-color;         // A slightly lighter color than pure black
   margin-top: 0px;      // A little space between your name and title
 }
 
@@ -44,7 +48,6 @@ $base-font-size:   1.3rem; //
 /// //////////////////////////////////////////////////////////////////////
 .home-intro-container {
   display: flex; /* This is the magic! It enables the flexbox layout. */
-  align-items: center; /* This vertically aligns the text and image. */
   gap: 1rem; /* This adds some space between the text and the image. */
 }
 
@@ -149,4 +152,104 @@ div.highlight {
 }
 .highlight pre, .highlight code {
   font-size: 90%;            // Sets the font size for the whole block
+}
+
+
+
+/* === Publications Page Styling (Refined, no border or numbering) === */
+.publications {
+  max-width: 900px;
+  margin: 0 auto;
+  list-style: none; /* remove default bullets if any */
+}
+
+.publications ol,
+.publications ul {
+  list-style: none; /* ensure no numbering or bullets */
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.year {
+  font-size: 1.75rem;
+  margin-top: 3rem;
+  border-bottom: 2px solid #eaeaea;
+  padding-bottom: 0.25rem;
+}
+
+.pub-card {
+  background: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.pub-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+
+.pub-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.pub-title a {
+  color: #222;
+  text-decoration: none;
+}
+
+.pub-title a:hover {
+  color: #007acc;
+}
+
+.pub-authors {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.pub-venue-full {
+  font-style: italic;
+  color: #777;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem; /* smaller booktitle/journal font */
+}
+
+.pub-links a {
+  display: inline-block;
+  margin-right: 0.4rem;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  background: #f4f4f4;
+  color: #007acc;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+
+.pub-links a:hover {
+  background: #007acc;
+  color: #fff;
+}
+
+/* === Hidden sections for Abs & Bib === */
+.hidden {
+  display: none;
+}
+
+.hidden.open {
+  display: block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  background: #fafafa;
+  border-radius: 6px;
+  border: 1px solid #eaeaea;
+  font-size: 0.9rem;
 }

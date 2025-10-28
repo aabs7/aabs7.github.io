@@ -1,0 +1,88 @@
+---
+---
+
+@inproceedings{khanal2020search,
+  author    = {Abhish Khanal and
+               Deepak Chand and
+               Prakash Chaudhary and
+               Subash Timilsina and
+               Sanjeeb Prasad Panday and
+               Aman Shakya and
+               Rom Kant Pandey},
+  title     = {Search Disaster Victims using Sound Source Localization},
+  booktitle = {International Conference on Information Systems for Crises Response and Management},
+  year      = {2020},
+  url       = {https://arxiv.org/abs/2103.06049},
+  pdf       = {https://arxiv.org/pdf/2103.06049.pdf},
+  html      = {https://arxiv.org/abs/2103.06049},
+  abbr      = {ISCRAM 2020},
+  bibtex_show={true},
+  abstract = {Sound Source Localization (SSL) are used to estimate the position of sound sources. Various methods have been used for detecting sound and its localization. This paper presents a system for stationary sound source localization by cubical microphone array consisting of eight microphones placed on four vertical adjacent faces which is mounted on three wheel omni-directional drive for the inspection and monitoring of the disaster victims in disaster areas. The proposed method localizes sound source on a 3D space by grid search method using Generalized Cross Correlation Phase Transform (GCC-PHAT) which is robust when operating in real life scenario where there is lack of visibility. The computed azimuth and elevation angle of victimized human voice are fed to embedded omni-directional drive system which navigates the vehicle automatically towards the stationary sound source. },
+}
+
+@misc{khanal2022rrt,
+  author = {Khanal, Abhish},
+  title = {RRT and RRT* Using Vehicle Dynamics},
+  year={2022},
+  doi={10.48550/ARXIV.2206.10533},
+  arxiv={2206.10533},
+  url={https://arxiv.org/abs/2206.10533},
+  pdf={https://arxiv.org/pdf/2206.10533.pdf},
+  publisher={arXiv},
+  abbr={arXiv},
+  bibtex_show={true},
+  abstract = {The trajectory derived from RRT and RRT* is zagged. A holonomic drive is able to follow this trajectory. But real-life vehicle which has dynamical constraints cannot follow this trajectory. In this work, we are going to modify the RRT and RRT* algorithm to generate a trajectory that a vehicle with dynamical constraint can follow. The continuous nature of steering control and acceleration control in a real-world vehicle introduces the complexity in its model. To introduce constraint in the vehicle's motion, while reducing the number of control and hence complexity, we are modeling our vehicle as a Dubins car. A Dubins car has only three controls (turning left, turning right, and moving forward) with a fixed velocity which makes our model simple. We use dubins curve (path that dubins car can follow) to trace the trajectory in RRT and RRT* algorithm. },
+}
+
+@inproceedings{khanal2023mrlsp,
+  author = {Abhish Khanal and Gregory J. Stein},
+  title = {Learning Augmented, Multi-Robot Long-Horizon Navigation in Partially Mapped Environments},
+  booktitle   = {IEEE International Conference on Robotics and Automation (ICRA)},
+  year = {2023},
+  url = {https://ieeexplore.ieee.org/abstract/document/10161476},
+  pdf = {https://arxiv.org/pdf/2303.16654.pdf},
+  html = {https://ieeexplore.ieee.org/abstract/document/10161476},
+  abbr={ICRA 2023},
+  bibtex_show={true},
+  abstract = {We present a novel approach for efficient and reliable goal-directed long-horizon navigation for a multi-robot team in a structured, unknown environment by predicting statistics of unknown space. Building on recent work in learning-augmented model based planning under uncertainty, we introduce a high-level state and action abstraction that lets us approximate the challenging Dec-POMDP into a tractable stochastic MDP. Our Multi-Robot Learning over Subgoals Planner (MR-LSP) guides agents towards coordinated exploration of regions more likely to reach the unseen goal. We demonstrate improvement in cost against other multi-robot strategies; in simulated office-like environments, we show that our approach saves 13.29\% (2 robot) and 4.6\% (3 robot) average cost versus standard non-learned optimistic planning and a learning-informed baseline. },
+}
+
+@inproceedings{khanal2023guided,
+  author = {Abhish Khanal and Hoang-Dung Bui and Gregory J. Stein and Erion Plaku},
+  title = {Guided Sampling-Based Motion Planning with Dynamics in Unknown Environments},
+  booktitle = { IEEE International Conference on Automation Science and Engineering (CASE)},
+  year = {2023},
+  url = {https://ieeexplore.ieee.org/abstract/document/10260357},
+  pdf = {https://arxiv.org/pdf/2306.09229.pdf},
+  html = {https://ieeexplore.ieee.org/abstract/document/10260357},
+  abbr={CASE 2023},
+  bibtex_show={true},
+  abstract = {Despite recent progress improving the efficiency and quality of motion planning, planning collision-free and dynamically-feasible trajectories in partially-mapped environments remains challenging, since constantly replanning as unseen obstacles are revealed during navigation both incurs significant computational expense and can introduce problematic oscillatory behavior. To improve the quality of motion planning in partial maps, this paper develops a framework that augments sampling-based motion planning to leverage a high-level discrete layer and prior solutions to guide motion-tree expansion during replanning, affording both (i) faster planning and (ii) improved solution coherence. Our framework shows significant improvements in runtime and solution distance when compared with other sampling-based motion planners. },
+}
+
+@inproceedings{khanal2024dynamics,
+  author={Khanal, Abhish and Bui, Hoang-Dung and Plaku, Erion and Stein, Gregory J},
+  title={Learning-informed Long-Horizon Navigation under Uncertainty for Vehicles with Dynamics},
+  booktitle={IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  year={2024},
+  url = {https://ieeexplore.ieee.org/document/10801880},
+  pdf = {https://par.nsf.gov/servlets/purl/10573847},
+  html = {https://ieeexplore.ieee.org/document/10801880},
+  abbr={IROS 2024},
+  bibtex_show={true},
+  abstract = {We present a novel approach to learning-augmented, long-horizon navigation under uncertainty in large-scale environments in which considering the robot dynamics is essential for informing good behavior. Our approach tightly integrates sampling-based motion planning, which computes dynamically feasible routes to the goal through different unexplored boundaries, and a high-level planner that leverages predictions about unseen space to select a route that best makes progress toward the unseen goal. Owing to its ability to understand the impacts of the robot's dynamics on how it should attempt to reach the goal, our approach achieves both higher reliability and improved navigation performance compared to competitive learning-informed and non-learned baselines in simulated office-building-like environments.},
+}
+
+
+@inproceedings{khanal2025learning,
+  author={Khanal, Abhish and Mathew, Joseph Prince and Nowzari, Cameron and Stein, Gregory J},
+  title={Learning-Augmented Model-Based Multi-Robot Planning for Time-Critical Search and Inspection Under Uncertainty},
+  booktitle={IEEE 21st International Conference on Automation Science and Engineering (CASE)},
+  year={2025},
+  url = {https://ieeexplore.ieee.org/abstract/document/11163899},
+  pdf = {https://arxiv.org/pdf/2507.06129.pdf},
+  html = {https://ieeexplore.ieee.org/abstract/document/11163899},
+  abbr={CASE 2025},
+  bibtex_show={true},
+  abstract = {In disaster response or surveillance operations, quickly identifying areas needing urgent attention is critical, but deploying response teams to every location is inefficient or often impossible. Effective performance in this domain requires coordinating a multi-robot inspection team to prioritize inspecting locations more likely to need immediate response, while also minimizing travel time. This is particularly challenging because robots must directly observe the locations to determine which ones require additional attention. This work introduces a multi-robot planning framework for coordinated time-critical multi-robot search under uncertainty. Our approach uses a graph neural network to estimate the likelihood of PoIs needing attention from noisy sensor data and then uses those predictions to guide a multi-robot model-based planner to determine the cost-effective plan. Simulated experiments demonstrate that our planner improves performance at least by 16.3%, 26.7%, and 26.2% for 1, 3, and 5 robots, respectively, compared to non-learned and learned baselines. We also validate our approach on real-world platforms using quad-copters.}
+}

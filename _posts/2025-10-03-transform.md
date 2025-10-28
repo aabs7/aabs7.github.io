@@ -59,7 +59,7 @@ You can also visualize the transform (TF tree), to see how things are connected 
 ros2 run tf2_tools view_frames
 ```
 <div class="blog-figure">
-  <img src="{{ site.baseurl }}/assets/images/blogs/tf2/image.png" alt="Adding arm base in the world" />
+  <img src="{{ site.baseurl }}assets/images/blogs/tf2/image.png" alt="Adding arm base in the world" />
   <p>Output of view_frames in pdf. Adding arm base in the world</p>
 </div>
 
@@ -83,7 +83,7 @@ ros2 run tf2_tools view_frames
 You’ll see something like this:
 
 <div class="blog-figure">
-  <img src="{{ site.baseurl }}/assets/images/blogs/tf2/image1.png" alt="adding gripper on base" />
+  <img src="{{ site.baseurl }}assets/images/blogs/tf2/image1.png" alt="adding gripper on base" />
   <p>adding gripper on base</p>
 </div>
 
@@ -126,7 +126,7 @@ Now, as expected, this should create a new branch in our tf tree from the `world
 ros2 run tf2_tools view_frames
 ```
 <div class="blog-figure">
-  <img src="{{ site.baseurl }}/assets/images/blogs/tf2/image2.png" alt="Adding object in the world" />
+  <img src="{{ site.baseurl }}assets/images/blogs/tf2/image2.png" alt="Adding object in the world" />
   <p>Adding object in the world</p>
 </div>
 
