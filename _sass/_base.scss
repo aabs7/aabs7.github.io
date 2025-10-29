@@ -1,0 +1,10 @@
+@use "variables" as vars;
+
+
+.site-header {
+  border-top: none;
+}
+
+.wrapper {
+  max-width: vars.$max-width;
+}

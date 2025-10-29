@@ -1,0 +1,77 @@
+@use "variables" as vars;
+
+.post-header {
+  margin-bottom: 20px;   /*Add space below the header, before the content*/
+}
+
+.post-header h1 {
+  font-size: 3.0rem;    /* Make your name nice and big */
+  margin-bottom: 0;     /* Remove default space to pull the subtitle closer */
+}
+
+/* /// Introduction and profile picture */
+.home-intro-container {
+  display: flex; /* This is the magic! It enables the flexbox layout. */
+  gap: 1rem; /* This adds some space between the text and the image. */
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+  .home-intro-container {
+    /* * Changes the layout from a horizontal row to a vertical column.
+     * 'column-reverse' is used because your image div comes after your text div
+     * in the HTML, and this puts the second item (image) on top.
+    */
+    flex-direction: column-reverse;
+  }
+}
+
+
+.home-intro-text {
+  flex: 2; /* Makes the text column take up twice as much space as the image column. */
+}
+
+.home-intro-image {
+  flex: 1; /* The image column takes up 1 part of the available space. */
+  text-align: center; /* Centers the image within its column. */
+}
+
+.home-intro-image img {
+  max-width: 250px; /* Adjust the size of your image as you like. */
+  width: 100%;
+  height: auto; /* Keeps the image's aspect ratio. */
+  border-radius: 5px; /* Makes the image circular. Use 15px for rounded corners. */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds a subtle shadow for depth. */
+}
+
+/*  Social media icons */
+.social-links {
+  margin-top: 8px; /* Adjusts the space between the picture and the icons */
+}
+
+.social-links a {
+  font-size: 1.8rem;        /* Slightly smaller icons might look better here */
+  color: vars.$black-color;
+  margin: 0 6px;            /* Adjust space between icons */
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: vars.$hover-color;
+}
+
+ /* Styling for the download resume button */
+.resume-container {
+  margin-top: 0px;     /* Adds space above the link */
+  text-align: center;   /* Centers the link */
+}
+
+/* Recent blog section styling in home */
+
+/* Home recent blogs CSS */
+.home-recent-blogs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2px;
+}

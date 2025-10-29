@@ -1,0 +1,19 @@
+---
+# This front matter is required for Jekyll to process the file
+---
+
+// Import Google Font (must be at the top)
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400&display=swap');
+$base-font-family: 'Dosis', sans-serif;
+$base-font-size:   1.2rem; //
+
+// Default jekyll theme
+@import "minima";
+
+// Custom styles
+@import "base",
+        "home",
+        "blog",
+        "gallery",
+        "publications",
+        "footer";

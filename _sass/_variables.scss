@@ -26,10 +26,13 @@ $grey-color-dark:     color.adjust($grey-color, $lightness: -25%);
 $white-color: #ffffff !default;
 $black-color: #000000 !default;
 
+// Layout
+$max-width: 850px;
+$hover-color: $blue-color !default;
 
-// Theme colors
+// Figure Caption Styles
+$caption-color: $grey-color !default;
+$caption-font-size: 1.1rem !default;
 
-$code-bg-color-light:     rgba($purple-color, 0.05);
-$code-bg-color-dark:      #2c3237 !default;
-
-$max-content-width: 100% !default;
+// Footer Styles
+$footer-bg-color: #f9f9f9 !default;

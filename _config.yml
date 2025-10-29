@@ -17,8 +17,8 @@ plugins:
 filtered_bibtex_keywords: [abbr, abstract, arxiv, bibtex_show, html, pdf, selected, supp, blog, code, poster, slides, website, preview, altmetric]
 
 scholar:
-  last_name: [Paudel]
-  first_name: [Abhishek, A.]
+  last_name: [Khanal]
+  first_name: [Abhish, A.]
   style: apa
   locale: en
   source: /_bibliography/

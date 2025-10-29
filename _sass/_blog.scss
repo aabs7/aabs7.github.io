@@ -1,0 +1,33 @@
+@use "variables" as vars;
+
+
+ /* to center blog images */
+.blog-figure {
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.blog-figure p {
+  font-size: vars.$caption-font-size;
+  color: vars.$caption-color;
+  margin-top: 4px;
+}
+
+ /* 1. Styling for inline code snippets within paragraphs and list items for posts/blogs */
+p > code, li > code {
+  background-color: #f0f0f0;  /* A light grey background */
+  color: #75156a;            /* A reddish color for the text, common for code */
+  padding: 0.2em 0.4em;       /* Adds a little space around the text */
+  margin: 0;                  /* Removes any extra margin */
+  font-size: 85%;             /* Makes the font slightly smaller than the paragraph text */
+  border-radius: 3px;         /* Adds slightly rounded corners */
+}
+
+ /* 2. For multi-line CODE BLOCKS like the one in your example */
+div.highlight {
+  background-color: #f8f8f8; /* A very light background for the block */
+}
+.highlight pre, .highlight code {
+  font-size: 90%;            /* Sets the font size for the whole block */
+}

@@ -27,27 +27,15 @@
     <div class="pub-authors">
       {% for author in entry.author_array %}
         {% assign author_is_self = false %}
-        {% if author.last == site.scholar.last_name and site.scholar.first_name contains author.first %}
+        {% if site.scholar.last_name contains author.last and site.scholar.first_name contains author.first %}
           {% assign author_is_self = true %}
-        {% endif %}
-        {% assign coauthor_url = nil %}
-        {% if site.data.coauthors[author.last] %}
-          {% for coauthor in site.data.coauthors[author.last] %}
-            {% if coauthor.firstname contains author.first %}
-              {% assign coauthor_url = coauthor.url %}
-              {% break %}
-            {% endif %}
-          {% endfor %}
         {% endif %}
 
         {% if author_is_self %}
-          <strong>{{ author.first }} {{ author.last }}</strong>
-        {% elsif coauthor_url %}
-          <a href="{{ coauthor_url }}" target="_blank">{{ author.first }} {{ author.last }}</a>
+          <u>{{ author.first }} {{ author.last }}</u>{% unless forloop.last %}, {% endunless %}
         {% else %}
-          {{ author.first }} {{ author.last }}
+          {{ author.first }} {{ author.last }}{% unless forloop.last %}, {% endunless %}
         {% endif %}
-        {% unless forloop.last %}, {% endunless %}
       {% endfor %}
     </div>
 
