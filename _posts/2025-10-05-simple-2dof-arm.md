@@ -11,7 +11,7 @@ slug: "simulating-a-simple-2dof-planar-arm"
 So far, we’ve made our robot structure with static transformations. Now we want to bring our robot to life. A simple way to see that is using a 2 degrees of freedom (DoF) planar arm. A 2DoF planar arm has two links and two rotational joints that moves in a 2D plane, allowing the end effector to reach different places.
 
 <div class="blog-figure">
-  <img src="{{ site.baseurl }}assets/images/blogs/PlanarArm/2dof.png" alt="A simple 2 DoF planar robot arm with 2 joints" />
+  <img src="/assets/images/blogs/PlanarArm/2dof.png" alt="A simple 2 DoF planar robot arm with 2 joints" />
   <p>A simple 2 DoF planar robot arm with 2 joints</p>
 </div>
 
@@ -108,7 +108,7 @@ Here, `materials` are used to define colors, for visualization purposes, so that
 For more details about how to create a URDF file, visit [here](https://wiki.ros.org/urdf/Tutorials). (But don’t worry about it, you’ll find it online)
 
 <div class="blog-figure">
-  <img src="{{ site.baseurl }}assets/images/blogs/PlanarArm/image.png" alt="A simple 2 DoF planar robot arm URDF structure" />
+  <img src="/assets/images/blogs/PlanarArm/image.png" alt="A simple 2 DoF planar robot arm URDF structure" />
   <p>2 DoF planar arm visualization in RViz</p>
 </div>
 
@@ -127,7 +127,7 @@ Now, before moving the robot, we can inspect the tf tree using `view_frames` to 
 ros2 run tf2_tools view_frames
 ```
 <div class="blog-figure">
-  <img src="{{ site.baseurl }}assets/images/blogs/PlanarArm/image1.png" alt="" />
+  <img src="/assets/images/blogs/PlanarArm/image1.png" alt="" />
 </div>
 Now, we don’t see `link1` and `link2`. Is something’s wrong?
 
@@ -147,7 +147,7 @@ In Rviz:
 - under `RobotModel > Description Topic`, If you set it to `/robot_description`, you’ll see something like this:
 
 <div class="blog-figure">
-  <img src="{{ site.baseurl }}assets/images/blogs/PlanarArm/image2.png" alt="Visualizing our 2DOF Planar Arm in Rviz. (The joints are not shown properly)" />
+  <img src="/assets/images/blogs/PlanarArm/image2.png" alt="Visualizing our 2DOF Planar Arm in Rviz. (The joints are not shown properly)" />
   <p>Visualizing our 2DOF Planar Arm in Rviz. (Joints not seen properly)</p>
 </div>
 
@@ -165,20 +165,20 @@ Open a new terminal and run the following command:
 ros2 run joint_state_publisher_gui joint_state_publisher_gui
 ```
 <div class="blog-figure">
-  <img src="{{ site.baseurl }}assets/images/blogs/PlanarArm/image3.png" alt="Joint state publisher gui" />
+  <img src="/assets/images/blogs/PlanarArm/image3.png" alt="Joint state publisher gui" />
   <p>Joint state publisher gui</p>
 </div>
 
 
 <div class="blog-figure">
-  <img src="{{ site.baseurl }}assets/images/blogs/PlanarArm/image4.png" alt="Rviz" />
+  <img src="/assets/images/blogs/PlanarArm/image4.png" alt="Rviz" />
   <p>Rviz</p>
 </div>
 
 Here, in the Joint State Publisher Gui, you can see that we have two sliders, each for two `revolute` joints. The values that we can publish to those joints are capped at the value we set for those joints (i.e., for `base_to_link1` joint (-3.14 to 0); and for `link1_to_link2` (-3.00 to 3.00) degrees in radians). When you change the value through sliders, you can see the arm moving.
 
 <div class="blog-figure">
-  <img src="{{ site.baseurl }}assets/images/blogs/PlanarArm/image5.png" alt="Moving the arm by changing joint values in Joint State Publisher GUI" />
+  <img src="/assets/images/blogs/PlanarArm/image5.png" alt="Moving the arm by changing joint values in Joint State Publisher GUI" />
   <p>Moving the arm by changing joint values in Joint State Publisher GUI</p>
 </div>
 
@@ -189,7 +189,7 @@ You can also verify the transforms using `view_frames` . Open a new terminal and
 ros2 run tf2_tools view_frames
 ```
 <div class="blog-figure">
-  <img src="{{ site.baseurl }}assets/images/blogs/PlanarArm/image6.png" alt="Viewing frames using view_frames" />
+  <img src="/assets/images/blogs/PlanarArm/image6.png" alt="Viewing frames using view_frames" />
   <p>Viewing frames using view_frames</p>
 </div>
 
