@@ -18,7 +18,7 @@ So, here are the collections of my memories.
   {% assign albums = sorted_moments | group_by: 'album'  %}
 
   {% for album in albums %}
-    {% assign cover = album.items | sort: 'date' | last %}
+    {% assign cover = album.items | sort: 'date' | first %}
 
     <!-- Album cover -->
     <a class="gallery-item"
@@ -33,7 +33,8 @@ So, here are the collections of my memories.
 
     <!-- Hidden images in the same album -->
     <div class="album-group" id="album-{{ album.name | slugify }}" style="display:none;">
-      {% for moment in album.items %}
+      {% assign images_in_album = album.items | sort: 'date' %}
+      {% for moment in images_in_album %}
         {% if moment != cover %}
           <a data-src="{{ moment.image }}"
              data-thumb="{{ moment.thumbnail }}"
