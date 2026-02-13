@@ -1,8 +1,8 @@
 ---
 layout: gallery
-title: Gallery
 permalink: gallery
 ---
+
 
 I like to travel ✈️, try new foods 🍜, meet different people 🤝🏼, and try new things.
 I do these things when I'm not working or taking a break.
