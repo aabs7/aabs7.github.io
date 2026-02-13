@@ -58,6 +58,9 @@ social_links:
 collections:
   moments:
     output: true
+  projects:
+    output: true
+    permalink: /projects/:name/
   categories:
     output: true
     permalink: /notes/:name/

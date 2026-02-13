@@ -1,0 +1,23 @@
+# List of projects
+
+Railroad (vertiwheeler, drone, humanoid, spot).
+VLAs diffusion for Push-T domain
+VLAs pick and move
+Multi-robot task planning (locobot).
+LLM-informed object search (locobot).
+Multi-robot time-critical search and inspection (drone).
+Configuring home network (DNS and VPN).
+MR-LSP
+Learning-informed dynamics Motion Planning
+Motion Planning
+Drone assembly and tuning (Making drone from scratch/tuning)
+Robot Arm (Moveit)
+Locobot stack
+
+
+
+Medicine delivery VTOLS.
+Baby warmer
+ABU Robocon 2019
+ABU Robocon 2018
+ABU Robocon 2017
