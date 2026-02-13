@@ -1,0 +1,197 @@
+@use "variables" as vars;
+
+.projects-section {
+    margin-bottom: 3rem;
+
+    .projects-main-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid vars.$grey-color-light;
+        padding-bottom: 0.5rem;
+
+        a {
+            color: vars.$black-color;
+            text-decoration: none;
+            &:hover {
+                color: vars.$hover-color;
+            }
+        }
+    }
+}
+
+.project-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+
+    .filter-btn {
+        background: vars.$grey-color-light;
+        border: none;
+        padding: 0.2rem 0.6rem;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        color: vars.$grey-color-dark;
+
+        &:hover {
+            background: vars.$grey-color;
+            color: vars.$white-color;
+        }
+
+        &.active {
+            background: vars.$hover-color;
+            color: vars.$white-color;
+        }
+    }
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+    padding-top: 10px;
+}
+
+.project-card-link {
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: block;
+
+    &:hover {
+        transform: translateY(-5px);
+        text-decoration: none;
+        color: inherit;
+        z-index: 1;
+        position: relative;
+
+        .project-card {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-title {
+            color: vars.$hover-color;
+        }
+    }
+}
+
+.project-card {
+    background: vars.$white-color;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid vars.$grey-color-light;
+
+    .project-image {
+        height: 140px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .project-info {
+        padding: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+
+        .project-title {
+            margin: 0 0 0.4rem 0;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            line-height: 1.2;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+        }
+
+        .project-card-tags {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 0.3rem;
+            overflow: hidden;
+
+            .project-card-tag {
+                background: vars.$grey-color-light;
+                padding: 0.1rem 0.45rem;
+                border-radius: 3px;
+                font-size: 0.7rem;
+                color: vars.$grey-color-dark;
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+        }
+    }
+}
+
+// Single Project Page Styles
+.project-header-image {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    display: block;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.project-page-header {
+    margin-bottom: 2rem;
+
+    .project-page-title {
+        margin-bottom: 1rem;
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+}
+
+.project-tags-container {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    clear: both;
+
+    .project-tag-item {
+        background: vars.$grey-color-light;
+        padding: 0.2rem 0.7rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        color: vars.$grey-color-dark;
+    }
+}
+
+/* Scoped fix for image captions ONLY in project pages */
+.project-content-body {
+    text-align: left;
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        height: auto;
+    }
+
+    p {
+        margin-bottom: 1.5rem;
+        text-align: left;
+
+        em, i {
+            display: block;
+            text-align: center;
+            font-size: 0.9rem;
+            color: vars.$grey-color;
+            margin-top: 0.5rem;
+        }
+    }
+
+    h1, h2, h3, h4, h5, h6, ul, ol, blockquote {
+        text-align: left;
+    }
+}

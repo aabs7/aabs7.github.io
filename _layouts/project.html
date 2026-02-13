@@ -1,0 +1,37 @@
+---
+layout: default
+---
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    }
+  };
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<article class="project-post">
+
+  <header class="project-page-header">
+    <h1 class="project-page-title">{{ page.title | escape }}</h1>
+    {% if page.tags %}
+      <div class="project-tags-container">
+        {% for tag in page.tags %}
+          <span class="project-tag-item">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </header>
+
+  <div class="project-content-body">
+    {% if page.image %}
+      <img src="{{ page.image }}" alt="{{ page.title }}" class="project-header-image">
+    {% endif %}
+    
+    {{ content }}
+  </div>
+
+</article>
