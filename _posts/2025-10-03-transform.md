@@ -58,11 +58,7 @@ You can also visualize the transform (TF tree), to see how things are connected 
 ```markdown
 ros2 run tf2_tools view_frames
 ```
-<div class="blog-figure">
-  <img src="/assets/images/blogs/tf2/image.png" alt="Adding arm base in the world" />
-  <p>Output of view_frames in pdf. Adding arm base in the world</p>
-</div>
-
+{% include figure.html path="/assets/images/blogs/tf2/image.png" width="50%"  caption="Output of view_frames after adding arm base in the world" %}
 
 ## 2. Add a gripper on the arm_base
 
@@ -82,10 +78,7 @@ ros2 run tf2_tools view_frames
 
 You’ll see something like this:
 
-<div class="blog-figure">
-  <img src="/assets/images/blogs/tf2/image1.png" alt="adding gripper on base" />
-  <p>adding gripper on base</p>
-</div>
+{% include figure.html path="/assets/images/blogs/tf2/image1.png" width="50%" caption="adding gripper on base" %}
 
 ## 3. Automatically Computing Transformation Matrix using TF2
 
@@ -125,10 +118,7 @@ Now, as expected, this should create a new branch in our tf tree from the `world
 ```markdown
 ros2 run tf2_tools view_frames
 ```
-<div class="blog-figure">
-  <img src="/assets/images/blogs/tf2/image2.png" alt="Adding object in the world" />
-  <p>Adding object in the world</p>
-</div>
+{% include figure.html path="/assets/images/blogs/tf2/image2.png" width="50%"  caption="Adding object in the world" %}
 
 You should see something similar to this. It tells you that in the world, you have object and arm base (with multiple joints)
 
