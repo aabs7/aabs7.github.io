@@ -1,5 +1,5 @@
 <div class="recent-posts">
-    <h3> <a href="{{ '/notes/' | relative_url }}" class="home-recent-blogs-more">Recent Posts</a> </h3>
+    <h3> <a href="{{ '/blogs/' | relative_url }}" class="home-recent-blogs-more">Recent Posts</a> </h3>
     {%- if site.posts.size > 0 -%}
         {%- for post in site.posts limit:6-%}
             <p class="home-recent-blogs">

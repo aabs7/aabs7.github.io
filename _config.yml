@@ -5,7 +5,7 @@ baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://abkhanal.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ""
 github_username:  ""
-permalink: /notes/:categories/:slug/
+permalink: /blogs/:categories/:slug/
 # Build settings
 theme: minima
 plugins:
@@ -63,4 +63,4 @@ collections:
     permalink: /projects/:name/
   categories:
     output: true
-    permalink: /notes/:name/
+    permalink: /blogs/:name/
