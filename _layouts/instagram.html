@@ -1,0 +1,222 @@
+---
+layout: page
+---
+
+<div class="instagram-profile">
+  <!-- Simplified Header -->
+  <header class="profile-header minimal">
+    <div class="profile-details">
+      <div class="profile-username-row">
+        <h2 class="username">My gallery</h2>
+      </div>
+      <div class="profile-bio">
+        <p>I like to travel ✈️, try new foods 🍜, meet different people 🤝🏼, and try new things.
+        I do these things when I'm not working or taking a break.
+        The more you experience, the more you know, and you have many stories to tell.
+        The stories and memories from the past are the sources of happiness, humility, inspiration, and life lessons.
+        So, here are the collections of my memories.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Grid View (Main View) -->
+  <div class="instagram-grid" id="view-grid">
+    {% assign sorted_moments = site.moments | sort: 'date' | reverse %}
+    {% assign albums = sorted_moments | group_by: 'album' %}
+    {% for album in albums %}
+      {% assign cover = album.items | sort: 'date' | first %}
+      <div class="grid-item" data-album-index="{{ forloop.index0 }}">
+        <img src="{{ cover.thumbnail | relative_url }}" alt="{{ album.name }}">
+        {% if album.items.size > 1 %}
+          <div class="multiple-images-icon"><i class="fas fa-clone"></i></div>
+        {% endif %}
+        <div class="grid-item-overlay">
+           <span>{{ album.name }}</span>
+           <span><i class="fas fa-image"></i> {{ album.items.size }}</span>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <!-- Modal Overlay -->
+  <div class="instagram-modal" id="instagram-modal">
+    <div class="modal-close"><i class="fas fa-times"></i></div>
+    <div class="modal-content-wrapper">
+      {% for album in albums %}
+        <div class="instagram-post modal-post" id="post-{{ forloop.index0 }}" style="display: none;">
+          <div class="post-content">
+            {% assign images_in_album = album.items | sort: 'date' %}
+            <div class="image-slider">
+              {% if images_in_album.size > 1 %}
+                <button class="slider-arrow prev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-arrow next" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+              {% endif %}
+              <div class="slides">
+                {% for moment in images_in_album %}
+                  <div class="slide" 
+                       id="slide-{{ album.name | slugify }}-{{ forloop.index }}"
+                       data-caption="{{ moment.caption | escape }}"
+                       data-date="{{ moment.date | date: '%B %d, %Y' }}"
+                       data-location="{{ album.name | escape }}"
+                       style="--bg-image: url('{{ moment.image | relative_url }}');">
+                    <img src="{{ moment.image | relative_url }}" alt="{{ moment.title }}" loading="lazy">
+                  </div>
+                {% endfor %}
+              </div>
+              {% if images_in_album.size > 1 %}
+                <div class="slider-indicators">
+                  {% for moment in images_in_album %}
+                    <span class="indicator {% if forloop.first %}active{% endif %}" data-target="slide-{{ album.name | slugify }}-{{ forloop.index }}"></span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="post-footer">
+            <div class="post-location">
+              <span class="location">{{ album.name }}</span>
+            </div>
+            <div class="post-caption-container">
+              <p class="current-caption">{{ album.items[0].caption }}</p>
+            </div>
+            <div class="post-date">
+              {{ album.items[0].date | date: "%B %d, %Y" }}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const modal = document.getElementById('instagram-modal');
+  const modalPosts = document.querySelectorAll('.modal-post');
+  const closeBtn = document.querySelector('.modal-close');
+  const gridItems = document.querySelectorAll('.grid-item');
+
+  function openPost(index) {
+    modalPosts.forEach(post => post.style.display = 'none');
+    const targetPost = document.getElementById(`post-${index}`);
+    if (targetPost) {
+      targetPost.style.display = 'block';
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  gridItems.forEach(item => {
+    item.addEventListener('click', () => {
+      openPost(item.dataset.albumIndex);
+    });
+  });
+
+  // Slider Arrows logic
+  document.querySelectorAll('.slider-arrow').forEach(arrow => {
+    arrow.addEventListener('click', (e) => {
+      const container = arrow.parentElement.querySelector('.slides');
+      if (container) {
+        const slideWidth = container.offsetWidth;
+        if (arrow.classList.contains('prev')) {
+          container.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+        } else {
+          container.scrollBy({ left: slideWidth, behavior: 'smooth' });
+        }
+      }
+    });
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // Dynamic Caption and Indicator Observer
+  const posts = document.querySelectorAll('.instagram-post');
+  posts.forEach(post => {
+    const slidesContainer = post.querySelector('.slides');
+    const indicators = post.querySelectorAll('.indicator');
+    const captionEl = post.querySelector('.current-caption');
+    const dateEl = post.querySelector('.post-date');
+    const locationEl = post.querySelector('.location');
+    
+    if (slidesContainer) {
+      const observerOptions = {
+        root: slidesContainer,
+        threshold: 0.6
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const slide = entry.target;
+            const slideId = slide.id;
+            const caption = slide.dataset.caption;
+            const date = slide.dataset.date;
+            const location = slide.dataset.location;
+
+            indicators.forEach(indicator => {
+              if (indicator.dataset.target === slideId) {
+                indicator.classList.add('active');
+                // Scroll indicator into view if there are many
+                indicator.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+              } else {
+                indicator.classList.remove('active');
+              }
+            });
+
+            if (captionEl && caption) {
+              captionEl.style.opacity = 0;
+              setTimeout(() => {
+                captionEl.textContent = caption;
+                captionEl.style.opacity = 1;
+                captionEl.parentElement.scrollTop = 0; // Reset scroll
+              }, 150);
+            }
+            if (dateEl && date) {
+              dateEl.textContent = date;
+            }
+            if (locationEl && location) {
+              locationEl.textContent = location;
+            }
+          }
+        });
+      }, observerOptions);
+      
+      post.querySelectorAll('.slide').forEach(slide => {
+        observer.observe(slide);
+      });
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+    
+    if (modal.classList.contains('active')) {
+      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      
+      const activePost = Array.from(modalPosts).find(p => p.style.display === 'block');
+      if (activePost) {
+        const slidesContainer = activePost.querySelector('.slides');
+        if (slidesContainer) {
+          const slideWidth = slidesContainer.offsetWidth;
+          if (e.key === 'ArrowLeft') {
+            slidesContainer.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+          } else {
+            slidesContainer.scrollBy({ left: slideWidth, behavior: 'smooth' });
+          }
+        }
+      }
+    }
+  });
+});
+</script>
+
+{{ content }}

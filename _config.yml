@@ -6,6 +6,13 @@ url: "https://abkhanal.com" # the base hostname & protocol for your site, e.g. h
 twitter_username: ""
 github_username:  ""
 permalink: /blogs/:categories/:slug/
+
+header_pages:
+  - pages/about.md
+  - pages/blogs.md
+  - pages/projects.md
+  - pages/publications.md
+
 # Build settings
 theme: minima
 plugins:
