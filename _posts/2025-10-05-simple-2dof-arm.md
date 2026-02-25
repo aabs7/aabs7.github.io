@@ -10,10 +10,7 @@ slug: "simulating-a-simple-2dof-planar-arm"
 
 So far, we’ve made our robot structure with static transformations. Now we want to bring our robot to life. A simple way to see that is using a 2 degrees of freedom (DoF) planar arm. A 2DoF planar arm has two links and two rotational joints that moves in a 2D plane, allowing the end effector to reach different places.
 
-<div class="blog-figure">
-  <img src="/assets/images/blogs/PlanarArm/2dof.png" alt="A simple 2 DoF planar robot arm with 2 joints" />
-  <p>A simple 2 DoF planar robot arm with 2 joints</p>
-</div>
+{% include figure.html path="/assets/images/blogs/PlanarArm/2dof.png" caption="A simple 2 DoF planar robot arm with 2 joints" %}
 
 To simulate this, we will modify our urdf file to describe a moving arm. To make this, we can no longer use `fixed` joints, therefore we use `revolute` joints, that allows for rotation.
 
@@ -107,10 +104,7 @@ Here, `materials` are used to define colors, for visualization purposes, so that
 
 For more details about how to create a URDF file, visit [here](https://wiki.ros.org/urdf/Tutorials). (But don’t worry about it, you’ll find it online)
 
-<div class="blog-figure">
-  <img src="/assets/images/blogs/PlanarArm/image.png" alt="A simple 2 DoF planar robot arm URDF structure" />
-  <p>2 DoF planar arm visualization in RViz</p>
-</div>
+{% include figure.html path="/assets/images/blogs/PlanarArm/image.png" width="50%" caption="2 DoF planar arm visualization in RViz" %}
 
 
 ## 2. Moving the Arm
@@ -126,9 +120,7 @@ Now, before moving the robot, we can inspect the tf tree using `view_frames` to 
 ```xml
 ros2 run tf2_tools view_frames
 ```
-<div class="blog-figure">
-  <img src="/assets/images/blogs/PlanarArm/image1.png" alt="" />
-</div>
+{% include figure.html path="/assets/images/blogs/PlanarArm/image1.png" width="50%"%}
 Now, we don’t see `link1` and `link2`. Is something’s wrong?
 
 ## 2.1. Visualizing using ROS Vizualizer (RViz)
@@ -146,10 +138,7 @@ In Rviz:
 - under `Global Options > Fixed Frame`, If you change it to `base`, and
 - under `RobotModel > Description Topic`, If you set it to `/robot_description`, you’ll see something like this:
 
-<div class="blog-figure">
-  <img src="/assets/images/blogs/PlanarArm/image2.png" alt="Visualizing our 2DOF Planar Arm in Rviz. (The joints are not shown properly)" />
-  <p>Visualizing our 2DOF Planar Arm in Rviz. (Joints not seen properly)</p>
-</div>
+{% include figure.html path="/assets/images/blogs/PlanarArm/image2.png"  width="50%" caption="Visualizing our 2DOF Planar Arm in Rviz. (Joints not seen properly)" %}
 
 
 > The reason you only see `world → base` in `view_frames` and not other joints (`base_to_link1`, `link1_to_link2`) is because **the joints after the fixed one are revolute joints**, and the `robot_state_publisher` needs **joint state information** (from the `/joint_states` topic) to publish transforms for them.
@@ -164,23 +153,14 @@ Open a new terminal and run the following command:
 ```xml
 ros2 run joint_state_publisher_gui joint_state_publisher_gui
 ```
-<div class="blog-figure">
-  <img src="/assets/images/blogs/PlanarArm/image3.png" alt="Joint state publisher gui" />
-  <p>Joint state publisher gui</p>
-</div>
+{% include figure.html path="/assets/images/blogs/PlanarArm/image3.png" caption="Joint state publisher gui" %}
 
 
-<div class="blog-figure">
-  <img src="/assets/images/blogs/PlanarArm/image4.png" alt="Rviz" />
-  <p>Rviz</p>
-</div>
+{% include figure.html path="/assets/images/blogs/PlanarArm/image4.png" width="50%" caption="Rviz" %}
 
 Here, in the Joint State Publisher Gui, you can see that we have two sliders, each for two `revolute` joints. The values that we can publish to those joints are capped at the value we set for those joints (i.e., for `base_to_link1` joint (-3.14 to 0); and for `link1_to_link2` (-3.00 to 3.00) degrees in radians). When you change the value through sliders, you can see the arm moving.
 
-<div class="blog-figure">
-  <img src="/assets/images/blogs/PlanarArm/image5.png" alt="Moving the arm by changing joint values in Joint State Publisher GUI" />
-  <p>Moving the arm by changing joint values in Joint State Publisher GUI</p>
-</div>
+{% include figure.html path="/assets/images/blogs/PlanarArm/image5.png" width="50%" caption="Moving the arm by changing joint values in Joint State Publisher GUI" %}
 
 
 You can also verify the transforms using `view_frames` . Open a new terminal and type:
@@ -188,10 +168,7 @@ You can also verify the transforms using `view_frames` . Open a new terminal and
 ```xml
 ros2 run tf2_tools view_frames
 ```
-<div class="blog-figure">
-  <img src="/assets/images/blogs/PlanarArm/image6.png" alt="Viewing frames using view_frames" />
-  <p>Viewing frames using view_frames</p>
-</div>
+{% include figure.html path="/assets/images/blogs/PlanarArm/image6.png" width="50%" caption="Viewing frames using view_frames" %}
 
 
 Everything works. Now, instead of running on different terminal manually each time, we will write a script to run everything that we need at once.
@@ -216,12 +193,7 @@ import xacro
 
 def generate_launch_description():
 
-    urdf_path = os.path.join(
-        # This is a dummy package name, update it if you have a real package
-        # For now, we assume the launch file is in the same folder as the URDF
-        '.',
-        'two_dof_arm.urdf'
-    )
+    urdf_path = os.path.join('.', 'two_dof_arm.urdf')
     robot_description = xacro.process_file(urdf_path).toxml()
 
     # 1. Robot state publisher node
@@ -241,7 +213,7 @@ def generate_launch_description():
         output='screen'
     )
 
-		# 3. Rviz2 Node
+    # 3. Rviz2 Node
     rviz_node = Node(
         package='rviz2',
         executable='rviz2',
