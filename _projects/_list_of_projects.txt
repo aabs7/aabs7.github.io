@@ -7,9 +7,9 @@ Multi-robot task planning (locobot).
 LLM-informed object search (locobot).
 Multi-robot time-critical search and inspection (drone).
 Configuring home network (DNS and VPN).
-MR-LSP
-Learning-informed dynamics Motion Planning
-Motion Planning
+[x] MR-LSP
+[x] Learning-informed dynamics Motion Planning
+[x] Motion Planning
 Drone assembly and tuning (Making drone from scratch/tuning)
 Robot Arm (Moveit)
 Locobot stack

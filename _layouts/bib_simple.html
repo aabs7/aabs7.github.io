@@ -1,0 +1,51 @@
+---
+---
+<div class="pub-simple" id="{{entry.key}}">
+  <span class="pub-authors">
+    {% for author in entry.author_array %}
+      {% assign author_is_self = false %}
+      {% if site.scholar.last_name contains author.last and site.scholar.first_name contains author.first %}
+        {% assign author_is_self = true %}
+      {% endif %}
+
+      {% if author_is_self %}
+        <u>{{ author.first }} {{ author.last }}</u>{% unless forloop.last %}, {% endunless %}
+      {% else %}
+        {{ author.first }} {{ author.last }}{% unless forloop.last %}, {% endunless %}
+      {% endif %}
+    {% endfor %}
+  </span>.
+  <span class="pub-title">
+    {% if entry.url %}
+      <a href="{{ entry.url }}" target="_blank">"{{ entry.title }}"</a>.
+    {% else %}
+      "{{ entry.title }}".
+    {% endif %}
+  </span>
+  <span class="pub-venue-full">
+    {% if entry.journal %}
+      <em>{{ entry.journal }}</em>,
+    {% elsif entry.booktitle %}
+      <em>{{ entry.booktitle }}</em>,
+    {% endif %}
+  </span>
+  <span class="pub-year">{{ entry.year }}</span>.
+
+  <div class="pub-links-simple">
+    {% if entry.bibtex_show %}
+      <a class="bibtex" role="button">[BibTeX]</a>
+    {% endif %}
+    {% if entry.pdf %}
+      <a href="{{ entry.pdf | relative_url }}" target="_blank">[PDF]</a>
+    {% endif %}
+    {% if entry.code %}
+      <a href="{{ entry.code }}" target="_blank">[Code]</a>
+    {% endif %}
+  </div>
+
+  {% if entry.bibtex_show %}
+  <div class="bibtex hidden">
+    {% highlight bibtex %}{{ entry.bibtex | hideCustomBibtex }}{% endhighlight %}
+  </div>
+  {% endif %}
+</div>
