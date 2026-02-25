@@ -14,7 +14,11 @@ layout: page
             <!-- Social Links below picture -->
             <div class="social-links">
             {%- for link in site.social_links -%}
-                <a href="{{ link.url }}" target="_blank" title="{{ link.name }}"><i class="{{ link.icon }}"></i></a>
+                {% assign target = "_self" %}
+                {% if link.url contains "http" %}
+                    {% assign target = "_blank" %}
+                {% endif %}
+                <a href="{{ link.url }}" target="{{ target }}" title="{{ link.name }}"><i class="{{ link.icon }}"></i></a>
             {%- endfor -%}
             </div>
             <div class="resume-container">

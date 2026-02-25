@@ -53,6 +53,9 @@ social_links:
   - name: YouTube
     url: "https://youtube.com/@abhishkhanal"
     icon: "fab fa-youtube"
+  - name: Instagram
+    url: "/gallery"
+    icon: "fab fa-instagram"
 
 
 collections:

@@ -46,13 +46,13 @@
 
 /*  Social media icons */
 .social-links {
-  margin-top: 8px; /* Adjusts the space between the picture and the icons */
+  margin-top: 0px; /* Adjusts the space between the picture and the icons */
 }
 
 .social-links a {
-  font-size: 1.8rem;        /* Slightly smaller icons might look better here */
+  font-size: 1.4rem;        /* Smaller icons to prevent wrapping */
   color: vars.$black-color;
-  margin: 0 6px;            /* Adjust space between icons */
+  margin: 0 4px;            /* Reduced space between icons */
   transition: color 0.3s;
 }
 
