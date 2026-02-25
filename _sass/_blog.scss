@@ -2,12 +2,31 @@
 
 
  /* to center blog images */
-.blog-figure {
+.blog-figure, figure {
   text-align: center;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 1.5rem;
 }
+
+figure img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+figure figcaption {
+  display: block;
+  text-align: center;
+  font-size: vars.$caption-font-size;
+  color: vars.$caption-color;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
 .blog-figure p {
   font-size: vars.$caption-font-size;
   color: vars.$caption-color;

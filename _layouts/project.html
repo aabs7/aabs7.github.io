@@ -17,6 +17,9 @@ layout: default
 
   <header class="project-page-header">
     <h1 class="project-page-title">{{ page.title | escape }}</h1>
+    {% if page.description %}
+      <p class="project-page-description">{{ page.description }}</p>
+    {% endif %}
     {% if page.tags %}
       <div class="project-tags-container">
         {% for tag in page.tags %}

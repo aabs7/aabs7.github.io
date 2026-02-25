@@ -91,6 +91,23 @@
         height: 140px;
         background-size: cover;
         background-position: center;
+        position: relative;
+
+        .pinned-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: vars.$white-color;
+            font-size: 1rem;
+            text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+            opacity: 0.9;
+            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+
+            i {
+                transform: rotate(45deg);
+            }
+        }
     }
 
     .project-info {
@@ -141,12 +158,20 @@
 }
 
 .project-page-header {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 
     .project-page-title {
-        margin-bottom: 1rem;
         font-size: 2.5rem;
+        margin-bottom: 5px;
         font-weight: bold;
+    }
+
+    .project-page-description {
+        font-size: 0.95rem;
+        color: vars.$grey-color;
+        margin-top: -0.5rem;
+        margin-bottom: 1.0rem;
+        font-style: italic;
     }
 }
 
@@ -170,6 +195,38 @@
 .project-content-body {
     text-align: left;
 
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -10px;
+        margin-left: -10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .col-sm, .col-sm-4 {
+        padding: 10px;
+        flex: 1 1 auto;
+        box-sizing: border-box;
+    }
+
+    .col-sm-4 {
+        width: 33.33%;
+        max-width: 33.33%;
+    }
+
+    @media (max-width: 600px) {
+        .col-sm, .col-sm-4 {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+
+    figure {
+        margin: 0 auto 1.5rem auto;
+        text-align: center;
+    }
+
     img {
         display: block;
         margin-left: auto;
@@ -178,17 +235,18 @@
         height: auto;
     }
 
+    figcaption {
+        display: block;
+        text-align: center;
+        font-size: 0.9rem;
+        color: vars.$grey-color;
+        margin-top: 0.5rem;
+        font-style: italic;
+    }
+
     p {
         margin-bottom: 1.5rem;
         text-align: left;
-
-        em, i {
-            display: block;
-            text-align: center;
-            font-size: 0.9rem;
-            color: vars.$grey-color;
-            margin-top: 0.5rem;
-        }
     }
 
     h1, h2, h3, h4, h5, h6, ul, ol, blockquote {

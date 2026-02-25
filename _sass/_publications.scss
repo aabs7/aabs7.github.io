@@ -103,4 +103,63 @@
   border-radius: 6px;
   border: 1px solid #eaeaea;
   font-size: 0.9rem;
+  text-align: left; /* Ensure text is left-aligned */
+}
+
+.bibtex.hidden.open pre {
+  text-align: left;
+  margin: 0;
+  white-space: pre-wrap; /* Ensure long lines wrap instead of overflowing or centering weirdly */
+}
+
+/* === Simple Publication Layout (for projects/blogs) === */
+.pub-simple {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  font-size: 0.95rem;
+
+  .pub-authors {
+    color: #333;
+  }
+
+  .pub-title {
+    font-weight: normal;
+    a {
+      color: inherit;
+      text-decoration: none;
+      &:hover {
+        color: #007acc;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .pub-venue-full {
+    font-style: italic;
+  }
+
+  .pub-links-simple {
+    display: inline-block;
+    margin-left: 10px;
+    
+    a {
+      text-decoration: none;
+      color: #007acc;
+      font-size: 0.8rem;
+      margin-right: 5px;
+      cursor: pointer;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &.active {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .bibtex.hidden.open {
+    margin-top: 0.5rem;
+  }
 }

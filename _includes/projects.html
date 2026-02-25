@@ -1,9 +1,12 @@
 {% if site.projects.size > 0 %}
 <section class="projects-section">
-    {% unless page.url == "/projects/" %}
+    {% if page.layout == "home" %}
+    <h3 class="projects-main-title">Selected Projects</h3>
+    {% elsif page.url != "/projects/" %}
     <h3 class="projects-main-title">Projects</h3>
-    {% endunless %}
+    {% endif %}
 
+    {% unless page.layout == "home" %}
     {% assign all_tags = "" %}
     {% for project in site.projects %}
       {% for tag in project.tags %}
@@ -22,13 +25,25 @@
             {% endif %}
         {% endfor %}
     </div>
+    {% endunless %}
 
     <div class="projects-grid" id="projects-grid">
-        {% for project in site.projects %}
+        {% assign pinned_projects = site.projects | where: "pinned", true %}
+        {% assign other_projects = site.projects | where_exp: "item", "item.pinned != true" %}
+        {% assign sorted_projects = pinned_projects | concat: other_projects %}
+
+        {% for project in sorted_projects %}
+        {% if page.layout != "home" or project.pinned %}
         {% capture project_tags %}{% for tag in project.tags %}{{ tag | slugify }} {% endfor %}{% endcapture %}
         <a href="{{ project.url | relative_url }}" class="project-card-link" data-tags="{{ project_tags | strip }}">
             <div class="project-card">
-                <div class="project-image" style="background-image: url('{{ project.image }}');"></div>
+                <div class="project-image" style="background-image: url('{{ project.image }}');">
+                    {% if project.pinned %}
+                    <div class="pinned-badge" title="Pinned Project">
+                        <i class="fas fa-thumbtack"></i>
+                    </div>
+                    {% endif %}
+                </div>
                 <div class="project-info">
                     <h4 class="project-title">{{ project.title }}</h4>
                     <div class="project-card-tags">
@@ -39,10 +54,12 @@
                 </div>
             </div>
         </a>
+        {% endif %}
         {% endfor %}
     </div>
 </section>
 
+{% unless page.layout == "home" %}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.filter-btn');
@@ -72,4 +89,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+{% endunless %}
 {% endif %}
