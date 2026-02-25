@@ -1,7 +1,7 @@
 {% if site.projects.size > 0 %}
 <section class="projects-section">
     {% if page.layout == "home" %}
-    <h3 class="projects-main-title">Selected Projects</h3>
+    <h3 class="projects-main-title"><a href="{{ '/projects/' | relative_url }}">Selected Projects</a></h3>
     {% elsif page.url != "/projects/" %}
     <h3 class="projects-main-title">Projects</h3>
     {% endif %}
