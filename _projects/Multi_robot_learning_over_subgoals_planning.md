@@ -2,7 +2,7 @@
 layout: project
 title: "Multi-Robot Navigation Under Uncertainty"
 description: "This post dives into an approach, presented in my paper [1], that combines classical planning techniques and learning to guide a team of robots to reach unseen point goal in minimum expected distance.."
-image: "/papers/thumbnail_mrlsp.gif"
+image: "/assets/images/projects/thumbnail_mrlsp.gif"
 tags: ["multi-robot", "navigation", "learning", "planning", "uncertainty", "robotics"]
 pinned: true
 ---
@@ -12,7 +12,7 @@ Imagine a scenario where a team of multiple robots are deployed to rescue a vict
 Equipped with cameras and LIDAR sensors to detect their surroundings, the robots need to navigate the unknown building to quickly reach the victim. However, without a known map, the fastest route to their goal isn’t clear.
 
 {% include figure.html
-    path="/papers/mrlsp_optimistic.gif"
+    path="assets/images/projects/mrlsp_optimistic.gif"
     width="50%"
     caption="Fig 1: Two robots trying to find goal in previously unseen environment." %}
 
@@ -28,7 +28,7 @@ Instead of using *optimistic* planning, where robots assume every unexplored are
 MR-LSP abstract both the state of the environment and the robot team's actions to enable planning utilizing learning. High-level joint-action ($a_t$) for the robot team involve assigning each robot a *subgoal*---boundary between free and unseen space---to navigate towards and explore beyond in an effort to reach the goal.
 
 {% include figure.html
-           path="/papers/mrlsp.png"
+           path="assets/images/projects/mrlsp.png"
            caption="Fig 2: Schematic of MR-LSP multi-robot expected cost calculation and navigation." %}
 
 For each subgoal, learning estimates their properties: the likelihood of *success* $P_S(\sigma)$, the likelihood subgoal $\sigma$ leads to the goal; the *success* cost $R_S(\sigma)$, the expected cost in distance to reach the goal if that subgoal leads to the goal; and the *exploration* cost $R_E(\sigma)$, the cost of exploring that subgoal and coming back. The planning process for MR-LSP using high-level state and action is shown in Fig 2.
@@ -39,11 +39,11 @@ To compute the cost of a joint multi-robot action $a_t = [\sigma_2, \sigma_3]$, 
 Using this planning, and learned estimates from a CNN network, we can see that our robot team now divides effort thinking of long-horizon impact of their decisions, and uses learning to predict spaces that might lead to dead-end and avoid those spaces to reach the goal efficiently.
 
 {% include figure.html
-    path="/papers/mrlsp_learned.gif"
+    path="assets/images/projects/mrlsp_learned.gif"
     width="50%"
     caption="Fig 2. Using our planning framework, the robots effectively divide efforts betwee the team to find the unseen point goal." %}
 
-If you want to learn more about the multi-robot state and action abstraction, the planning process, and how the learned model is trained, check out the paper.
+If you want to learn more about the multi-robot state and action abstraction, the planning process, and how the learned model is trained, check out the paper {% cite khanal2023mrlsp %}.
 
 ## Reference
-{% bibliography -f papers --query @*[key=khanal2023mrlsp]* --template bib_simple %}
+{% bibliography -f papers --cited --template bib_simple %}
